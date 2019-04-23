@@ -24,14 +24,14 @@ In this case server will encounter &quot;false&quot; at index 2, 5 , 7 and thus 
 ## SERVER
 
 1. Creates a socket connection at port
-2. Creates new datagram packets with buffer size of 4KB
-    -The server will wait for client request
+2. Creates new datagram packets with buffer size of 4KB.The server will wait for client request
 
+    
 3. Once the server receives the resource request, it will start checking for the requested
 4. Converts the file to byte stream and divide it into packets of size 4kb each and send all
 5. Now the server will ask for Ack from theclient
 6. Then it handles the acknowledgement by resending the packets (GoBack N or SelectiveRepeat).
-7. 6,7 will be executed until server receives a positive acknowledgement, i.e., all
+7. 5,6 will be executed until server receives a positive acknowledgement, i.e., all
 8. Finally, it will notify the client that all packets are received by sending &quot;successfully sent the resource&quot;.
 
 ## CLIENT
