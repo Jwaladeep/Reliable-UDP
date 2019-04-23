@@ -1,6 +1,6 @@
 # Reliable-UDP
 
-**How Acknowledgement is working:**
+**How Acknowledgement in this implementation's working:**
 
 We are creating a boolean array for acknowledgement where each index signifies the packet number and value at that index represents whether the packet is received or not. (FALSE-not received. TRUE- received).
 
