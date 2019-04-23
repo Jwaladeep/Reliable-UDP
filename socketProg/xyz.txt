@@ -1,0 +1,163 @@
+Home > Network protocols > Internet technologies > UDP (User Datagram Protocol)
+DEFINITION UDP (User Datagram Protocol)
+Posted by: Margaret Rouse WhatIs.com
+Contributor(s): George Lawton and Chuck Moozakis
+c o n
+UDP (User Datagram Protocol) is an alternative communications protocol to Transmission Control Protocol (TCP) used primarily for establishing low-latency
+and loss-tolerating connections between applications on the internet.
+Both UDP and TCP run on top of the Internet Protocol (IP) and are sometimes referred to as UDP/IP or TCP/IP. But there are important differences between
+the two.
+Where UDP enables process-to-process communication, TCP supports host-to-host communication. TCP sends individual packets and is considered a reliable
+transport medium; UDP sends messages, called datagrams, and is considered a best-effort mode of communications.
+In addition, where TCP provides error and flow control, no such mechanisms are supported in UDP. UDP is considered a connectionless protocol because it
+doesn't require a virtual circuit to be established before any data transfer occurs.
+UDP provides two services not provided by the IP layer. It provides port numbers to help distinguish different user requests and, optionally, a checksum
+capability to verify that the data arrived intact.
+TCP has emerged as the dominant protocol used for the bulk of internet connectivity due to its ability to break large data sets into individual packets, check for
+and resend lost packets, and reassemble packets in the correct sequence. But these additional services come at a cost in terms of additional data overhead
+and delays called latency.
+In contrast, UDP just sends the packets, which means that it has much lower bandwidth overhead and latency. With UDP, packets may take different paths
+between sender and receiver and, as a result, some packets may be lost or received out of order.
+UDP is an ideal protocol for network applications in which perceived latency is critical, such as in gaming and voice and video communications, which can
+suffer some data loss without adversely affecting perceived quality. In some cases, forward error correction techniques are used to improve audio and video
+quality in spite of some loss.
+UDP can also be used in applications that require lossless data transmission when the application is configured to manage the process of retransmitting lost
+packets and correctly arranging received packets. This approach can help to improve the data transfer rate of large files compared to TCP.
+In the Open Systems Interconnection (OSI) communication model, UDP, like TCP, is in Layer 4, the transport layer. UDP works in conjunction with higher level
+protocols to help manage data transmission services including Trivial File Transfer Protocol (TFTP), Real Time Streaming Protocol (RTSP), Simple Network
+Protocol (SNP) and domain name system (DNS) lookups.
+The user datagram protocol has attributes that make it advantageous for use with applications that can tolerate lost data.
+It allows packets to be dropped and received in a different order than they were transmitted, making it suitable for real-time applications where latency
+might be a concern.
+It can be used for transaction-based protocols, such as DNS or Network Time Protocol.
+It can be used where a large number of clients are connected and where real-time error correction isn't necessary, such as gaming, voice or video
+conferencing, and streaming media.
+The User Datagram Protocol header has four fields, each of which is 2 bytes. They are:
+Applications of UDP
+User datagram protocol features
+UDP header composition
+2
+9 SearchNetworking g
+source port number, which is the number of the sender;
+destination port number, the port the datagram is addressed to;
+length, the length in bytes of the UDP header and any encapsulated data; and
+checksum, which is used in error checking. Its use is required in IPv6 and optional in IPv4.
+This was last updated in June 2018
+Related Terms
+802.3
+802.3 is a standard specification for Ethernet, a method of physical communication in a local area network (LAN), which is ... See complete definition
+OSI model (Open Systems Interconnection)
+OSI (Open Systems Interconnection) is a reference model for how applications communicate over a network. See complete definition
+Wi-Fi 6 (802.11ax)
+Wi-Fi 6 is a standard for wireless internet that replaces the 802.11ac (concurrently renamed Wi-Fi 5) standard. See complete definition
+UDP header format illustrated
+TECHTARGET
+Join the Discussion
+Prev
+1
+Next
+Margaret Rouse asks: Z
+In which applications would you consider not using the User
+Datagram Protocol?
+mContinue Reading About UDP (User Datagram Protocol)
+TCP vs. UDP: How are they different? 
+How are TCP/IP and HTTP related? ∙
+Three ways to enhance TCP/IP traffic ∙
+Gain a better understanding of TCP/IP with this tutorial ∙
+UDP and TCP port numbers ∙
+q
+q
+q
+mDig Deeper on Network protocols and standards
+ALL
+3
+NEWS GET STARTED EVALUATE MANAGE PROBLEM SOLVE
+2What is a programmable data plane and where does P4 fit in?
+qOSI model (Open Systems Interconnection)
+k802.11ax release date: Here's what has to happen first
+k UDP header format
+11 comments
+Oldest
+Send me notifications when other members comment.
+Add My Comment
+mJoin the conversation
+z
+5
+[-] bobasdfsdf
+- 5 Mar 2014 3:41 PM
+Cleancut explanation. Fantastic and Thanks
+Reply
+t
+[-] Maxine Giza
+- 8 Apr 2015 4:26 PM
+Glad you found our definition helpful, bobasdfsdf!
+Reply
+t
+[-] johngarrett
+- 17 May 2015 4:58 PM
+Humor me for on this, why would anyone use UDP over TCP? It seems to have many disadvantages, what am I missing?
+Reply
+t
+[-] cameronmcnz
+- 18 May 2015 3:58 PM
+John Garret, I believe what you mean is "Why would anyone use TCP???" Okay, just joking there, but there is actually a big drive on to just remove TCP from the world of networking. Why? Well,
+the network is much more reliable than in the past. TCP breaks packets up on the one side, then reassembles them on the other side of the connection, and then does a bunch of calculations to
+t
+Load More q802.3
+make sure each packet has come in. It's a lot of work! Plus, sometimes a lost packet doesn't matter. Imagine you are watching a video and the packets for one frame are lost. Should the video
+freeze until all the packets are found, or should the video just keep playing, using all the new packets that have come in? Sometimes a lost packet or two doesn't matter. They say Netflix accounts
+for half of all Intenet usage in the US. That's a lot of packets to keep track off, especially if a lost packet or two really doesn't matter. Speed. Efficiency. Practicality. Those are all reasons that people
+are moving towards UDP and away from TCP.
+Reply
+[-] Margaret Rouse
+- 31 May 2015 11:36 AM
+Which applications have you found user datagram protocol to be most beneficial?
+Reply
+t
+[-] jmdheur
+- 10 Sep 2015 6:09 AM
+1. Big file (more than 100 GB) transfer where sender application on one side splits files in PDUs and receiver application rebuilds PDUs in order to recreate the original file. Project STATEL for the
+European Commission.
+2. HDTV
+Reply
+t
+[-] Margaret Rouse
+- 31 May 2015 11:36 AM
+In which applications would you consider not using the User Datagram Protocol?
+Reply
+t
+[-] abhinash108
+- 29 May 2016 3:17 AM
+Thats a nice explanation. And thank you.
+Reply
+t
+[-] FatRoger431
+- 2 Oct 2018 9:08 AM
+My antivirus software shows UDP4 files that have been open for 14 days. And I just got notice that my email password had changed - it had not. Could this be a hacker tool?
+Reply
+t
+[-] Michael Tidmarsh
+- 2 Oct 2018 9:18 AM
+Hello, FatRoger431! I suggest you ask your questions on our Questions & Answers forum. Our experts should be able to help you out!
+Reply
+t
+[-] Paedru
+- 27 Feb 2019 1:58 AM
+Video Games and other state driven software ..like ATM(Automated Teller machines) where once a transaction is done it is done with..if the UDP/IP packet informing the change in state it lost or
+not reached to intended client. it is not transmitted again ..Because if the packet were to be transmitted by that time another state change would have happened in real time and the user will be one
+state behind due to re transmission....
+Reply
+t
+SDN 5
+ENTERPRISE WAN UNIFIED COMMUNICATIONS MOBILE COMPUTING DATA CENTER IT CHANNEL
+SearchSDN
+About Us Meet The Editors Contact Us Privacy Policy Advertisers Business Partners Media Kit Corporate Site
+Contributors Reprints Archive Site Map Answers Definitions E-Products Events
+Features Guides Opinions Photo Stories Quizzes Tips Tutorials Videos
+All Rights Reserved,
+Copyright 2000 - 2019, TechTarget
+-ADS BY GOOGLE
+Automate 5g & Edge
+Computing
+E2E Multi-Vendor Security Orchestration. E2E Multi-Tenant
+Network Orchestration
